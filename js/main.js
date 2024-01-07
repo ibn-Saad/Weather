@@ -14,11 +14,11 @@ const apikey = "7fba3e875b824190b3b113240240601";
 
 var searchBar = document.querySelector(".searchBar");
 
-async function getData(city) {
+const getData  = async (city) => {
   let response = await fetch(
     `http://api.weatherapi.com/v1/forecast.json?key=${apikey}&q=${city}&days=3`
   );
-  var data = await response.json();
+  let data = await response.json();
   getToday(data);
   getTomorrow(data);
   getAfterTomorrow(data);
